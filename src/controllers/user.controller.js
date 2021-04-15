@@ -27,15 +27,15 @@ const update = (req, res) => {
 }
 
 const remove = (req, res) => {
-  const cpf = parseInt(req.params.cpf, 10)
+  const cpftitular = parseInt(req.params.cpftitular, 10)
 
-  if (my_database.has(cpf)) {
-    const user = my_database.get(cpf)
-    my_database.delete(user.cpf)
+  if (my_database.has(cpftitular)) {
+    const user = my_database.get(cpftitular)
+    my_database.delete(user.cpftitular)
     res.status(200).send(user)
   } else {
     res.status(404).send({
-      message: `user with cpf (${cpf}) not found`
+      message: `user with cpf titular (${cpftitular}) not found`
     })
   }
 }
