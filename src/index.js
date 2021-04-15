@@ -1,5 +1,5 @@
 const express =require('express')
-const userRouter = require('./routes/user.router')
+const customersRouter = require('./routes/customers.router')
 
 const app = express()
 
@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   })
   
 app.use(express.json())
-app.use('/user',userRouter)
+app.use('/customers',customersRouter)
 
 const port = process.env.PORT || 8080
 
